@@ -28,7 +28,9 @@ class Welcome extends CI_Controller {
 		// 	die();
 		// }
 	}
-
+	public function index(){
+		 redirect('welcome/login');
+	}
 	public function login()
 	{
 
