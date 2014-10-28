@@ -1,36 +1,23 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-	function __construct()
-	{
+
+	public function __construct(){
 		parent::__construct();
-		$this->load->library('ion_auth');
-		$this->load->library('form_validation');
-		$this->lang->load('auth');
-		$this->load->model('ubigeo_model');	
-		$this->load->model('encuesta_model');	
 
-		// if (!$this->ion_auth->logged_in()) {
-		// 	redirect('auth/login');
-		// }
-
-		// $roles = $this->ion_auth->get_roles();
-		// $flag = FALSE;
-		// foreach ($roles as $role) {
-		// 	if ($role->id == 1 || $role->id == 2) {
-		// 		$flag = TRUE;
-		// 		break;
-		// 	}
-		// }
-
-		// if (!$flag) {
-		// 	show_404();
-		// 	die();
-		// }
+        // To use site_url and redirect on this controller.
+        $this->load->helper('url');
 	}
 
-	public function login()
-	{
+	public function login(){
+
+		$this->load->library('facebook'); // Automatically picks appId and secret from config
+        // OR
+        // You can pass different one like this
+        //$this->load->library('facebook', array(
+        //    'appId' => 'APP_ID',
+        //    'secret' => 'SECRET',
+        //    ));
 
 		$user = $this->facebook->getUser();
         
@@ -57,11 +44,8 @@ class Welcome extends CI_Controller {
                 'scope' => array("email") // permissions here
             ));
         }
-        $this->load->view('canchas/fb_view',$data);
-		// $data['nav'] = TRUE;
-		// $data['title'] = 'Canchas!';
-		// $data['main_content'] = 'canchas/welcome_view';
-		// $this->load->view('backend/includes/template', $data);
+        $this->load->view('login',$data);
+
 	}
 
     public function logout(){
@@ -73,7 +57,7 @@ class Welcome extends CI_Controller {
         // Make sure you destory website session as well.
 
         redirect('welcome/login');
-    }	
+    }
+
 }
 
-?>
