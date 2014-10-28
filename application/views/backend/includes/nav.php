@@ -40,10 +40,6 @@
 				}
 
 			?>
-					<li>
-						<a target="top" href="<?php echo base_url('media/instructivo.pdf'); ?>">Instructivo</a>
-						
-					</li>
 			</ul>
 
 			<?php 

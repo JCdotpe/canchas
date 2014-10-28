@@ -28,9 +28,13 @@ class Welcome extends CI_Controller {
 		// 	die();
 		// }
 	}
+
 	public function index(){
+
 		 redirect('welcome/login');
+		 
 	}
+
 	public function login()
 	{
 
@@ -59,11 +63,11 @@ class Welcome extends CI_Controller {
                 'scope' => array("email") // permissions here
             ));
         }
-        $this->load->view('canchas/fb_view',$data);
-		// $data['nav'] = TRUE;
-		// $data['title'] = 'Canchas!';
-		// $data['main_content'] = 'canchas/welcome_view';
-		// $this->load->view('backend/includes/template', $data);
+        // $this->load->view('canchas/fb_view',$data);
+		$data['nav'] = TRUE;
+		$data['title'] = 'Canchas!';
+		$data['main_content'] = 'canchas/welcome_view';
+		$this->load->view('backend/includes/template', $data);
 	}
 
     public function logout(){
