@@ -1,80 +1,36 @@
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php echo base_url(''); ?>">CANCHAS CLOUD</a>
-        </div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-			<?php
-				if($this->ion_auth->logged_in()){
-					$roles = $this->ion_auth->get_roles();
-					if(!empty($roles)){
-			?>
-					<?php
-						$i = 1;
-						foreach ($roles as $role){
-							$c = "";
-							if($this->uri->segment(1) == $role->url){
-								$c = ' class="active"';
-							}
-					?>
-							<li <?php echo $c; ?>>
-								<?php echo anchor(base_url().strtolower($role->url),utf8_encode($role->role_name)); ?>
-							</li>
-					<?php
-						}
-					}
-				}else{			?>
-
-
-					<li>
-						<a href="<?php echo base_url('index.php/auth/login'); ?>">Login</a>
-					</li>
-			<?php 
-				}
-
-			?>
-			</ul>
-
-			<?php 
-				if($this->ion_auth->logged_in()){
-			?>
- 	<ul class="nav navbar-nav navbar-right">
-        <li class="glass dropdown">
-          <a id="nav-user" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  <?php echo $user->username; ?> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <!-- <li><a href="#"><i class="fa fa-gear"></i> Configurar</a></li> -->
-            <!-- <li><a href="#"><i class="fa fa-key"></i> Cambiar contraseña</a></li> -->
-            <!-- <li class="divider"></li> -->
-            <li> <?php echo anchor('auth/logout', 'Salir'); ?></li>
-          </ul>
-        </li>
-      </ul>
-			<?php 
-				}
-			?>      
-
-		</div><!-- /.navbar-collapse -->
-      </div>
+    <!-- Preloader -->
+    <div id="mask">
+        <div id="loader"></div>
     </div>
+        
+    <header>
+        <nav class="navigation navigation-header">
+            <div class="container">
+                <div class="navigation-brand">
+                    <div class="brand-logo">
+						<a href="index.html" class="logo"></a>
+						<span class="sr-only">Open .futbol</span>
+                    </div>
+                    <button class="navigation-toggle visible-xs" type="button" data-toggle="dropdown" data-target=".navigation-navbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navigation-navbar">
+                    <ul class="navigation-bar navigation-bar-left">
+                        <li class="active"><a href="#hero">Inicio</a></li>
+                        <li><a href="#features">¿Cómo Funciona?</a></li>
+						<li><a href="#product">Precios</a></li>
+                        <li><a href="#guarantee">Contacto</a></li>
+                    </ul>
+                    <ul class="navigation-bar navigation-bar-right">
+                        <li class="featured"><a href="<?= $login_url ?>">Login</a></li>
+                    </ul>  
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
 
-<?php 
-	if(isset($fluid)){ 
-?>
-	<div class="container-fluid main-content">
-<?php 
-	}else{ 
-?>
-	<div class="container-fluid main-content">
-<?php 
-	} 
-	
-?>

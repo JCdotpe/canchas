@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>CANCHAS CLOUD</title>
+    <title>OPEN .futbol</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo base_url('css/bootstrap.min.css'); ?>">
@@ -17,6 +17,18 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="<?php echo base_url('css/main.css'); ?>">
 
+
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" href="http://vivaco.com/demo/startuply/assets/css/font-lineicons.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://vivaco.com/demo/startuply/assets/css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://vivaco.com/demo/startuply/assets/css/toastr.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://vivaco.com/demo/startuply/assets/css/style.css" type="text/css" media="all" />
+
+
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -24,7 +36,8 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body id="landing-page">
+
 
 
 <script type="text/javascript">
