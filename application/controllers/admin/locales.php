@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Locales extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
@@ -15,10 +15,12 @@ class Dashboard extends CI_Controller {
 
 		$data['nav'] = FALSE;
 		$data['title'] = 'Canchas!';
-		$data['main_content'] = 'admin/admin';
+		$data['main_content'] = 'admin/locales';
 		$this->load->view('backend/includes/template-admin', $data);	
 
 	}
+
+
 
 	
 }
